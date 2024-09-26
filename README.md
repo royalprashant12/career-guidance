@@ -1,61 +1,101 @@
-﻿# career-guidance
-Online Quiz
-developer
-screenshots
-Homepage
-homepage snap
 
-Admin Dashboard
-dashboard snap
+# Career Guidance - Online Quiz Platform
 
-Exam Rules
-invoice snap
+An **Online Quiz** system for students, teachers, and administrators, designed to manage and conduct exams efficiently.
 
-Exam
-doctor snap
+## Features
 
-Teacher
-doctor snap
-Functions
-Admin
-Create Admin account using command
-py manage.py createsuperuser
-After Login, can see Total Number Of Student, Teacher, Course, Questions are there in system on Dashboard.
-Can View, Update, Delete, Approve Teacher.
-Can View, Update, Delete Student.
-Can Also See Student Marks.
-Can Add, View, Delete Course/Exams.
-Can Add Questions To Respective Courses With Options, Correct Answer, And Marks.
-Can View And Delete Questions Too.
-Teacher
-Apply for job in System. Then Login (Approval required by system admin, Then only teacher can login).
-After Login, can see Total Number Of Student, Course, Questions are there in system on Dashboard.
-Can Add, View, Delete Course/Exams.
-Can Add Questions To Respective Courses With Options, Correct Answer, And Marks.
-Can View And Delete Questions Too.
-NOTE: Basically Admin Will Hire Teachers To Manage Courses and Questions.
+### **Admin**
+- Create an Admin account using the command:
+  ```bash
+  py manage.py createsuperuser
+  ```
+- After login, the Admin can:
+  - View the **Dashboard** with total counts of students, teachers, courses, and questions.
+  - **Manage Teachers**: View, update, delete, and approve teacher accounts.
+  - **Manage Students**: View, update, and delete student accounts.
+  - View student exam results and marks.
+  - **Manage Courses/Exams**: Add, view, and delete courses/exams.
+  - **Manage Questions**: Add questions to courses with options, correct answers, and marks. Also, view and delete questions.
 
-Student
-Create account (No Approval Required By Admin, Can Login After Signup)
-After Login, Can See How Many Courses/Exam And Questions Are There In System On Dashboard.
-Can Give Exam Any Time, There Is No Limit On Number Of Attempt.
-Can View Marks Of Each Attempt Of Each Exam.
-Question Pattern Is MCQ With 4 Options And 1 Correct Answer.
-HOW TO RUN THIS PROJECT
-Install Python(3.7.6) (Dont Forget to Tick Add to Path while installing Python)
-Open Terminal and Execute Following Commands :
-python -m pip install -r requirements. txt
-Download This Project Zip Folder and Extract it
-Move to project folder in Terminal. Then run following Commands :
-py manage.py makemigrations
-py manage.py migrate
-py manage.py runserver
-Now enter following URL in Your Browser Installed On Your Pc
-http://127.0.0.1:8000/
-CHANGES REQUIRED FOR CONTACT US PAGE
-In settins.py file, You have to give your email and password
+### **Teacher**
+- Apply for a job in the system. Admin approval is required to log in.
+- After login, the Teacher can:
+  - View the **Dashboard** with total counts of students, courses, and questions.
+  - **Manage Courses/Exams**: Add, view, and delete courses/exams.
+  - **Manage Questions**: Add questions to courses with options, correct answers, and marks. Also, view and delete questions.
+
+  **Note**: Admins hire teachers to manage courses and questions.
+
+### **Student**
+- Create an account (no approval needed by Admin).
+- After login, the Student can:
+  - View the **Dashboard** with total courses/exams and questions available.
+  - Take exams without any limit on the number of attempts.
+  - View marks for each exam attempt.
+
+### **Exam Features**
+- Question pattern is **MCQ** (Multiple Choice Questions) with 4 options and 1 correct answer.
+
+---
+
+## How to Run This Project
+
+1. **Install Python** (Version 3.7.6 recommended).
+   - **Important**: Don’t forget to tick "Add to Path" while installing Python.
+   
+2. **Install dependencies** by running the following command in the terminal:
+   ```bash
+   python -m pip install -r requirements.txt
+   ```
+
+3. **Download** the project ZIP folder and extract it.
+
+4. Navigate to the project folder in the terminal and run the following commands:
+
+   ```bash
+   py manage.py makemigrations
+   py manage.py migrate
+   py manage.py runserver
+   ```
+
+5. Open your browser and enter the following URL to access the project:
+   ```
+   http://127.0.0.1:8000/
+   ```
+
+---
+
+## Contact Us Page Configuration
+
+In the `settings.py` file, update the following configurations with your email credentials:
+
+```python
 EMAIL_HOST_USER = 'youremail@gmail.com'
 EMAIL_HOST_PASSWORD = 'your email password'
 EMAIL_RECEIVING_USER = 'youremail@gmail.com'
-Drawbacks/LoopHoles
-Admin/Teacher can add any number of questions to any course, But while adding course, admin provide question number.
+```
+
+---
+
+## Screenshots
+
+### Homepage
+![Homepage Snapshot](link-to-homepage-screenshot)
+
+### Admin Dashboard
+![Dashboard Snapshot](link-to-dashboard-screenshot)
+
+### Exam Rules
+![Rules Snapshot](link-to-rules-screenshot)
+
+### Exam Page
+![Exam Snapshot](link-to-exam-screenshot)
+
+### Teacher Panel
+![Teacher Panel Snapshot](link-to-teacher-panel-screenshot)
+
+---
+
+## Known Issues & Limitations
+- **Admin/Teacher Question Management**: Admins and teachers can add an unlimited number of questions to any course. However, when creating a course, the admin specifies a fixed number of questions, which could lead to inconsistencies in exams if not properly managed.
